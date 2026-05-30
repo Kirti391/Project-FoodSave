@@ -361,7 +361,7 @@ This project demonstrates:
 
 ## Developed For
 
-College Major Project
+College Minor Project
 
 ### Project Title
 
