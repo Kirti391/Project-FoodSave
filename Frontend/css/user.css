@@ -1,0 +1,241 @@
+:root {
+    --primary: #22c55e;
+    --primary-dark: #16a34a;
+    --primary-bg: #dcfce7;
+
+    --blue: #3b82f6;
+    --blue-bg: #dbeafe;
+
+    --orange: #f97316;
+    --orange-bg: #ffedd5;
+
+    --red: #ef4444;
+
+    --dark: #111827;
+    --gray: #6b7280;
+    --light: #f8faf7;
+    --border: #e5e7eb;
+
+    --white: #ffffff;
+
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: var(--white);
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--border);
+    padding: 20px;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul button {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--gray);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.sidebar ul button:hover {
+    background: #f1f5f9;
+    color: var(--dark);
+}
+
+.sidebar ul button.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+    margin-left: 260px;
+    padding: 25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    margin-bottom: 20px;
+}
+
+.topbar h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    color: var(--gray);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.content-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.content-section h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TABLE
+========================= */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    background: #f9fafb;
+    color: var(--gray);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.data-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table tr:hover {
+    background: #f9fafb;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.claim-btn {
+    background: var(--primary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.claim-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+#notificationArea {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    .data-table td, .data-table th {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,279 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+  background:
+  radial-gradient(circle at top left,#dcfce7,transparent 30%),
+  radial-gradient(circle at bottom right,#ffedd5,transparent 30%),
+  #f8faf7;
+  overflow-x:hidden;
+  color:#1f2937;
+}
+
+/* =========================
+ROOT COLORS
+========================= */
+
+:root{
+  --primary:#22c55e;
+  --primary-dark:#16a34a;
+  --orange:#f97316;
+  --light:#fffdf7;
+  --dark:#111827;
+  --gray:#6b7280;
+  --card:#ffffff;
+  --shadow:0 15px 45px rgba(0,0,0,0.08);
+  --radius:30px;
+}
+
+/* =========================
+REGISTER CONTAINER
+========================= */
+
+.register-container{
+  width:100%;
+  max-width:540px;
+  position:relative;
+}
+
+/* =========================
+REGISTER CARD
+========================= */
+
+.register-card{
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.5);
+  border-radius:var(--radius);
+  padding:45px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+  animation:fadeUp 0.8s ease;
+}
+
+.register-card::before{
+  content:'';
+  position:absolute;
+  width:220px;
+  height:220px;
+  background:rgba(34,197,94,0.08);
+  border-radius:50%;
+  top:-90px;
+  right:-90px;
+}
+
+.register-card::after{
+  content:'';
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:rgba(249,115,22,0.08);
+  border-radius:50%;
+  bottom:-80px;
+  left:-80px;
+}
+
+/* =========================
+LOGO
+========================= */
+
+.logo{
+  font-size:38px;
+  font-weight:800;
+  text-align:center;
+  color:var(--primary-dark);
+  margin-bottom:10px;
+  position:relative;
+  z-index:2;
+}
+
+/* =========================
+SUBTITLE
+========================= */
+
+.register-subtitle{
+  text-align:center;
+  color:var(--gray);
+  margin-bottom:35px;
+  font-size:15px;
+  position:relative;
+  z-index:2;
+}
+
+/* =========================
+FORM
+========================= */
+
+form{
+  position:relative;
+  z-index:2;
+}
+
+.input-group{
+  margin-bottom:22px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:10px;
+  font-size:14px;
+  font-weight:600;
+  color:var(--dark);
+}
+
+.input-group input,
+.input-group select{
+  width:100%;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid #e5e7eb;
+  background:#ffffff;
+  font-size:15px;
+  color:var(--dark);
+  outline:none;
+  transition:0.3s;
+}
+
+.input-group input::placeholder{
+  color:#9ca3af;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(34,197,94,0.15);
+  transform:translateY(-2px);
+}
+
+/* =========================
+REGISTER BUTTON
+========================= */
+
+.register-btn{
+  width:100%;
+  padding:17px;
+  border:none;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #4ade80
+  );
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:10px;
+  transition:0.35s;
+  box-shadow:
+  0 12px 25px rgba(34,197,94,0.25);
+}
+
+.register-btn:hover{
+  transform:translateY(-4px);
+  background:linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary)
+  );
+}
+
+/* =========================
+BOTTOM TEXT
+========================= */
+
+.bottom-text{
+  text-align:center;
+  margin-top:28px;
+  color:var(--gray);
+  font-size:14px;
+  position:relative;
+  z-index:2;
+}
+
+.bottom-text a{
+  color:var(--primary-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.bottom-text a:hover{
+  color:var(--orange);
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .register-card{
+    padding:35px 28px;
+  }
+
+  .logo{
+    font-size:32px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  body{
+    padding:20px 14px;
+  }
+
+  .register-card{
+    padding:28px 22px;
+    border-radius:24px;
+  }
+
+  .logo{
+    font-size:28px;
+  }
+
+  .register-subtitle{
+    font-size:14px;
+  }
+
+  .input-group input,
+  .input-group select{
+    padding:15px;
+    border-radius:16px;
+  }
+
+  .register-btn{
+    padding:15px;
+    border-radius:18px;
+  }
+
+}

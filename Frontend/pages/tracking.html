@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking</title>
+    <link rel="stylesheet" href="../css/ngo.css">
+</head>
+<body>
+
+<h2>Delivery Tracking</h2>
+
+<div id="trackingBox">Loading...</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+async function loadTracking() {
+
+    const res = await fetch(`http://localhost:5000/api/ngo/tracking/${id}`);
+    const data = await res.json();
+
+    if (!data.success) return;
+
+    const item = data.request;
+
+    document.getElementById("trackingBox").innerHTML = `
+        <p><b>Food:</b> ${item.food_type}</p>
+        <p><b>Status:</b> ${item.status}</p>
+        <p><b>Volunteer:</b> ${item.assigned_volunteer || "-"}</p>
+        <p><b>Location:</b> ${item.location}</p>
+    `;
+}
+
+loadTracking();
+</script>
+
+</body>
+</html>

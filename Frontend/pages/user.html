@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard - FoodSave</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+
+<body>
+
+    <!--  SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>FoodSave</span>
+        </div>
+
+        <ul>
+            <li>
+                <button id="availableBtn" class="active">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Available Food
+                </button>
+            </li>
+
+            <li>
+                <button id="claimsBtn">
+                    <i class="fa-solid fa-box"></i>
+                    My Claims
+                </button>
+            </li>
+
+            <li>
+                <button onclick="location.href='../index.html'">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+            </li>
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <h1>User Dashboard</h1>
+            <p>Browse and claim available food</p>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div id="notificationArea"></div>
+
+        <!--  AVAILABLE FOOD  -->
+        <section id="availableSection" class="content-section">
+
+            <h2>Available Food</h2>
+
+            <table class="data-table">
+
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Quantity</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="availableTable">
+                    <tr>
+                        <td colspan="4" style="text-align:center;">Loading...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- MY CLAIMS -->
+        <section id="claimsSection" class="content-section" style="display:none;">
+
+            <h2>My Claims</h2>
+
+            <table class="data-table">
+
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Status</th>
+                        <th>Claimed At</th>
+                    </tr>
+                </thead>
+
+                <tbody id="myClaimsTable">
+                    <tr>
+                        <td colspan="3" style="text-align:center;">Loading...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <!--  SCRIPT -->
+    <!-- Socket.IO Client -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <script src="../js/user.js"></script>
+
+    <script>
+        /* SIMPLE SIDEBAR TOGGLE */
+
+        const availableBtn = document.getElementById("availableBtn");
+        const claimsBtn = document.getElementById("claimsBtn");
+
+        const availableSection = document.getElementById("availableSection");
+        const claimsSection = document.getElementById("claimsSection");
+
+        availableBtn.addEventListener("click", () => {
+            availableSection.style.display = "block";
+            claimsSection.style.display = "none";
+
+            availableBtn.classList.add("active");
+            claimsBtn.classList.remove("active");
+        });
+
+        claimsBtn.addEventListener("click", () => {
+            availableSection.style.display = "none";
+            claimsSection.style.display = "block";
+
+            claimsBtn.classList.add("active");
+            availableBtn.classList.remove("active");
+        });
+    </script>
+
+</body>
+
+</html>

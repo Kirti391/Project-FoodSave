@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farm Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/farm.css">
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+
+<body>
+    
+<div id="notificationArea"></div>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div>
+
+                <div class="sidebar-top">
+                    <a href="../index.html" class="logo">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>FoodSave</span>
+                    </a>
+                    <p class="sidebar-role">Farm Panel</p>
+                </div>
+
+                <ul class="sidebar-links">
+                    <li><a href="#" id="dashboardBtn" class="active"><i class="fa fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#" id="requestsBtn"><i class="fa fa-box"></i> Waste Requests</a></li>
+                    <li><a href="#" id="acceptedBtn"><i class="fa fa-check"></i> Accepted</a></li>
+                    <li><a href="#" id="processingBtn"><i class="fa fa-recycle"></i> Processing</a></li>
+                    <li><a href="#" id="completedBtn"><i class="fa fa-truck"></i> Completed</a></li>
+                </ul>
+
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fa fa-right-from-bracket"></i> Logout
+            </button>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <div>
+                    <h1>Farm Dashboard</h1>
+                    <p>Organic waste → Compost & Feed system</p>
+                </div>
+            </div>
+
+            <!-- DASHBOARD SECTION -->
+            <section id="dashboardSection">
+
+                <!-- STATS (ONLY PLACE IDS EXIST NOW) -->
+                <div class="stats-grid">
+
+                    <div class="stat-card green">
+                        <p>Total Waste</p>
+                        <h2 id="totalWaste">0</h2>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <p>Accepted</p>
+                        <h2 id="acceptedWaste">0</h2>
+                    </div>
+                    <div class="stat-card blue">
+                        <p>Processed Waste</p>
+                        <h2 id="processedWaste">0</h2>
+                    </div>
+
+                    <div class="stat-card dark">
+                        <p>CO₂ Saved</p>
+                        <h2 id="co2Saved">0 kg</h2>
+                    </div>
+
+                    <div class="stat-card blue">
+                        <p>Compost</p>
+                        <h2 id="totalCompost">0</h2>
+                    </div>
+
+                    <div class="stat-card dark">
+                        <p>Animal Feed</p>
+                        <h2 id="totalFeed">0</h2>
+                    </div>
+                    <div class="stat-card purple">
+                        <p>Efficiency</p>
+                        <h2 id="efficiencyRate">0%</h2>
+                    </div>
+                    <!-- <div class="stat-card purple">
+                        <p>Processing</p>
+                        <h2 id="processedWaste">0</h2>
+                    </div> -->
+
+                </div>
+
+            </section>
+
+            <!-- REQUESTS -->
+            <section id="requestsSection" style="display:none;">
+                <div class="table-card">
+                    <h3>Incoming Waste Requests</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Food</th>
+                                <th>Qty</th>
+                                <th>Location</th>
+                                <th>Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requestsTable"></tbody>
+                    </table>
+
+                </div>
+            </section>
+
+            <!-- ACCEPTED -->
+            <section id="acceptedSection" style="display:none;">
+                <div class="table-card">
+                    <h3>Accepted Waste</h3>
+                    <table>
+                        <tbody id="acceptedTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PROCESSING -->
+            <section id="processingSection" style="display:none;">
+                <div class="table-card">
+                    <h3>Processing (Compost / Feed)</h3>
+                    <table>
+                        <tbody id="processingTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- COMPLETED -->
+            <section id="completedSection" style="display:none;">
+                <div class="table-card">
+                    <h3>Completed Processing</h3>
+                    <table>
+                        <tbody id="completedTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/farm.js"></script>
+
+</body>
+
+</html>

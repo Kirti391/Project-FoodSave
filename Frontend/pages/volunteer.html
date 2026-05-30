@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer Dashboard</title>
+
+    <link rel="stylesheet" href="../css/volunteer.css" />
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- SOCKET -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <!-- LOGO -->
+
+        <a href="../index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>FoodSave</span>
+        </a>
+
+        <!-- MENU -->
+        <ul>
+
+            <li>
+                <button id="dashboardBtn" class="active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </button>
+            </li>
+
+            <li>
+                <button id="assignedBtn">
+                    <i class="fa-solid fa-truck"></i>
+                    Assigned Pickups
+                </button>
+            </li>
+
+            <li>
+                <button id="activeBtn">
+                    <i class="fa-solid fa-clock"></i>
+                    Active Deliveries
+                </button>
+            </li>
+
+            <li>
+                <button id="completedBtn">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Completed
+                </button>
+            </li>
+
+            <li>
+                <button onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <h1>Volunteer Dashboard</h1>
+
+            <div class="user-box">
+                <i class="fa-solid fa-user"></i>
+                Volunteer
+            </div>
+
+        </div>
+
+        <!-- NOTIFICATIONS -->
+
+        <div id="notificationArea"></div>
+
+        <!-- DASHBOARD SECTION -->
+
+        <section id="dashboardSection">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Pickups</h3>
+                    <h1 id="totalPickups">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Active Deliveries</h3>
+                    <h1 id="activeDeliveries">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Completed Deliveries</h3>
+                    <h1 id="completedDeliveries">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Total Food Delivered</h3>
+                    <h1 id="foodDelivered">0</h1>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ASSIGNED PICKUPS -->
+
+        <section id="assignedSection" style="display:none;">
+
+            <div class="table-container">
+
+                <h2>Assigned Pickups</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Food</th>
+                            <th>Quantity</th>
+                            <th>Location</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assignedTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!--  ACTIVE DELIVERIES -->
+
+        <section id="activeSection" style="display:none;">
+
+            <div class="table-container">
+
+                <h2>Active Deliveries</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Food</th>
+                            <th>Quantity</th>
+                            <th>Destination</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="activeTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- COMPLETED DELIVERIES -->
+
+        <section id="completedSection" style="display:none;">
+
+            <div class="table-container">
+
+                <h2>Completed Deliveries</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Food</th>
+                            <th>Quantity</th>
+                            <th>Delivered To</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="completedTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="../js/volunteer.js"></script>
+
+</body>
+
+</html>

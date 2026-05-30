@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodSave Admin Dashboard</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div>
+                <a href="../index.html" class="logo" style="text-decoration: none;">
+                    <i class="fa-solid fa-leaf"></i>
+                    FoodSave
+                </a>
+                <ul class="menu">
+                    <li class="active" data-section="dashboardSection">
+                        <i class="fa-solid fa-chart-line"></i>Dashboard
+                    </li>
+
+                    <li data-section="donationsSection">
+                        <i class="fa-solid fa-bowl-food"></i>Donations
+                    </li>
+
+                    <li data-section="analyticsSection">
+                        <i class="fa-solid fa-chart-pie"></i>Analytics
+                    </li>
+
+                    <li data-section="usersSection">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Users
+
+                    </li>
+
+                    <li data-section="wasteSection">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                        Waste Monitor
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </aside>
+
+        <!-- MAIN -->
+
+        <main class="main">
+
+            <!-- TOPBAR -->
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+
+                        Admin Dashboard
+
+                    </h1>
+
+                    <p>
+
+                        Monitor donations & platform activity
+
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">
+                        A 
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- HERO -->
+
+            <div class="hero-card">
+
+                <div>
+                    <span class="hero-badge">
+                       Food Redistribution platform
+                    </span>
+
+                    <h2>
+                        Welcome Back Admin !
+                    </h2>
+
+                    <p>
+
+                        Manage donations, NGOs, volunteers and analytics from one place.
+
+                    </p>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <h3 id="heroMeals">
+
+                        0
+
+                    </h3>
+
+                    <span>
+
+                        Meals Saved
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD -->
+
+            <section id="dashboardSection">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card green">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                        </div>
+
+                        <div>
+
+                            <p>Total Donations</p>
+
+                            <h2 id="totalDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card orange">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <p>Accepted</p>
+
+                            <h2 id="acceptedDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card red">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </div>
+
+                        <div>
+
+                            <p>Rejected</p>
+
+                            <h2 id="rejectedDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card blue">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-truck"></i>
+
+                        </div>
+
+                        <div>
+
+                            <p>Completed</p>
+
+                            <h2 id="completedDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- DONATIONS -->
+
+            <section id="donationsSection" style="display:none;">
+
+                <div class="table-card">
+
+                    <div class="table-header">
+
+                        <h2>
+
+                            Food Donations
+
+                        </h2>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Food</th>
+
+                                    <th>Qty</th>
+
+                                    <th>Location</th>
+
+                                    <th>Status</th>
+
+                                    <th>NGO</th>
+
+                                    <th>Volunteer</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="adminTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ANALYTICS -->
+
+            <section id="analyticsSection" style="display:none;">
+
+                <div class="chart-grid">
+
+                    <div class="chart-card">
+
+                        <h3>
+
+                            Donation Analytics
+
+                        </h3>
+
+                        <canvas id="donationChart"></canvas>
+
+                    </div>
+
+                    <div class="chart-card">
+
+                        <h3>
+
+                            Status Breakdown
+
+                        </h3>
+
+                        <canvas id="statusChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- USERS -->
+
+            <section id="usersSection" style="display:none;">
+
+                <!-- USER HEADER -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h1>
+
+                            User Management
+
+                        </h1>
+
+                        <p>
+
+                            Manage donors, NGOs, volunteers and admins
+
+                        </p>
+
+                    </div>
+
+                    <div class="user-stats">
+
+                        <div class="mini-user-card">
+
+                            <h3 id="totalUsers">
+
+                                0
+
+                            </h3>
+
+                            <span>
+
+                                Total Users
+
+                            </span>
+
+                        </div>
+
+                        <div class="mini-user-card active-users">
+
+                            <h3 id="activeUsers">
+
+                                0
+
+                            </h3>
+
+                            <span>
+
+                                Active
+
+                            </span>
+
+                        </div>
+
+                        <div class="mini-user-card blocked-users">
+
+                            <h3 id="blockedUsers">
+
+                                0
+
+                            </h3>
+
+                            <span>
+
+                                Blocked
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- SEARCH + FILTER -->
+
+                <div class="filter-bar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="userSearch" placeholder="Search users...">
+
+                    </div>
+
+                    <select id="roleFilter">
+
+                        <option value="all">
+
+                            All Roles
+
+                        </option>
+
+                        <option value="donor">
+
+                            Donor
+
+                        </option>
+
+                        <option value="ngo">
+
+                            NGO
+
+                        </option>
+
+                        <option value="volunteer">
+
+                            Volunteer
+
+                        </option>
+
+                        <option value="admin">
+
+                            Admin
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- TABLE -->
+
+                <div class="table-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Name</th>
+
+                                    <th>Email</th>
+
+                                    <th>Role</th>
+
+                                    <th>Status</th>
+
+                                    <th>Joined</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="usersTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- WASTE -->
+            <section id="wasteSection" style="display:none;">
+                <div class="waste-grid">
+                    <div class="waste-card">
+                        <h3>
+                            Total Food Saved
+                        </h3>
+                        <h1 id="foodSaved">
+                            0 KG
+                        </h1>
+                    </div>
+
+                    <div class="waste-card">
+                        <h3>
+                            CO₂ Emission Reduced
+                        </h3>
+
+                        <h1 id="co2Reduced">
+                            0 KG
+                        </h1>
+                    </div>
+
+                    <div class="waste-card">
+                        <h3>
+                            Meals Distributed
+                        </h3>
+
+                        <h1 id="mealsDistributed">
+                            0
+                        </h1>
+                    </div>
+                </div>
+                <div class="chart-card waste-chart">
+                    <h3>
+                        Waste Reduction Analytics
+                    </h3>
+                    <canvas id="wasteChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

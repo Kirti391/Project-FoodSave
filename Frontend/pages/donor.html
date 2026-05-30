@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodSave Donor Dashboard</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../css/dashboard.css"> -->
+    <link rel="stylesheet" href="../css/donor.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- MOBILE MENU -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div>
+
+                <div class="sidebar-top">
+
+                    <a href="../index.html" class="logo">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>FoodSave</span>
+                    </a>
+
+                    <p class="sidebar-role">
+
+                        Donor Panel
+
+                    </p>
+
+                </div>
+
+                <ul class="sidebar-links">
+
+                    <li>
+
+                        <a href="#" id="dashboardBtn" class="active">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#" id="donateBtn">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Donate Food
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#" id="donationsBtn">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                            My Donations
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#" id="completedBtn">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Completed
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- LOGOUT -->
+
+            <button id="logoutBtn" class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </aside>
+
+        <!-- MAIN -->
+
+        <main class="main">
+
+            <!-- TOPBAR -->
+
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+
+                        Donor Dashboard
+
+                    </h1>
+
+                    <p>
+
+                        Manage your donations and community impact
+
+                    </p>
+
+                </div>
+
+                <div class="topbar-right">
+                    <div class="badge-box">
+                        <h3 id="donorBadge">New Donor</h3>
+                        <p>Score: <span id="donorScore">0</span></p>
+                    </div>
+
+                    <div class="notification">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                    </div>
+
+                    <div class="profile-mini">
+
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                        <div>
+
+                            <h4>
+                                Welcome
+                            </h4>
+
+                            <span>
+                                Food Donor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD SECTION -->
+
+            <section id="dashboardSection">
+
+                <!-- HERO -->
+
+                <div class="dashboard-hero donor-theme">
+
+                    <div class="hero-left">
+
+                        <span class="hero-tag">
+
+                             Community Impact
+
+                        </span>
+
+                        <h1>
+
+                            Welcome Back !
+
+                        </h1>
+
+                        <p>
+
+                            Your food donations are helping families,
+                            reducing waste, and creating sustainable
+                            community support.
+
+                        </p>
+
+                    </div>
+
+                    <div class="hero-impact">
+
+                        <h2>
+
+                            1,240 Meals Saved
+
+                        </h2>
+
+                        <span>
+
+                            +18% this month
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- ANALYTICS -->
+
+                <div class="analytics-grid">
+
+                    <div class="analytics-card green-card">
+
+                        <div class="analytics-icon">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                        </div>
+
+                        <div class="analytics-content">
+
+                            <p>
+                                Total Donations
+                            </p>
+
+                            <h2 id="totalDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="analytics-card orange-card">
+
+                        <div class="analytics-icon">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+                        <div class="analytics-content">
+
+                            <p>
+                                Accepted Donations
+                            </p>
+
+                            <h2 id="acceptedDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="analytics-card blue-card">
+
+                        <div class="analytics-icon">
+
+                            <i class="fa-solid fa-truck"></i>
+
+                        </div>
+
+                        <div class="analytics-content">
+
+                            <p>
+                                Completed Deliveries
+                            </p>
+
+                            <h2 id="completedDonations">
+
+                                0
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="analytics-card dark-card">
+
+                        <div class="analytics-icon">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </div>
+
+                        <div class="analytics-content">
+
+                            <p>
+                                Waste Reduced
+                            </p>
+
+                            <h2>
+
+                                2.3 Tons
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BOTTOM GRID -->
+
+                <div class="dashboard-bottom-grid">
+
+                    <!-- PROGRESS -->
+
+                    <div class="progress-card">
+
+                        <div class="progress-top">
+
+                            <h3>
+
+                                Monthly Sustainability Goal
+
+                            </h3>
+
+                            <span>
+
+                                72%
+
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"></div>
+
+                        </div>
+
+                        <p>
+
+                            You are close to your monthly food rescue target.
+
+                        </p>
+
+                    </div>
+
+                    <!-- ACTIVITY -->
+
+                    <div class="activity-card">
+
+                        <h3>
+
+                            Recent Activity
+
+                        </h3>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot green"></span>
+
+                            Donation accepted by NGO
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot orange"></span>
+
+                            Volunteer assigned
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot blue"></span>
+
+                            Pickup completed successfully
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- DONATE SECTION -->
+
+            <section id="donateSection" style="display:none;">
+
+                <div class="table-container">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+
+                                Donate Food
+
+                            </h2>
+
+                            <p>
+
+                                Help reduce food waste instantly
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <form id="donationForm">
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>
+                                    Food Type
+                                </label>
+
+                                <input type="text" id="food_type" placeholder="Rice, Bread, Vegetables" required>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label>
+                                    Quantity
+                                </label>
+
+                                <input type="text" id="quantity" placeholder="10kg / 50 meals" required>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label>
+                                    Hours Old
+                                </label>
+
+                                <input type="number" id="hours_old" placeholder="2" required>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label>
+                                    Location
+                                </label>
+
+                                <input type="text" id="location" placeholder="Delhi NCR" required>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label>
+                                    Food Condition
+                                </label>
+
+                                <select id="food_condition">
+
+                                    <option value="Fresh">
+                                        Fresh
+                                    </option>
+
+                                    <option value="Average">
+                                        Average
+                                    </option>
+
+                                    <option value="Spoiled">
+                                        Spoiled
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label>
+                                    Food Category
+                                </label>
+
+                                <select id="food_category">
+
+                                    <option value="Cooked">
+                                        Cooked
+                                    </option>
+
+                                    <option value="Raw">
+                                        Raw
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Submit Donation
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+            <!-- DONATIONS -->
+
+            <section id="donationsSection" style="display:none;">
+
+                <div class="table-container">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+
+                                My Donations
+
+                            </h2>
+
+                            <p>
+
+                                Track all active donations
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Food</th>
+                                <th>Quantity</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>NGO</th>
+                                <th>Volunteer</th>
+                                <th>Pickup</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="donorTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- COMPLETED -->
+
+            <section id="completedSection" style="display:none;">
+
+                <div class="table-container">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+
+                                Completed Donations
+
+                            </h2>
+
+                            <p>
+
+                                Successfully delivered food donations
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Food</th>
+                                <th>Quantity</th>
+                                <th>Location</th>
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="completedTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../js/donor.js"></script>
+
+</body>
+
+</html>

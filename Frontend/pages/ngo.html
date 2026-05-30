@@ -1,0 +1,249 @@
+<!-- ngo.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard - FoodSave</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/ngo.css">
+</head>
+<body>
+
+<!--  SIDEBAR -->
+<aside class="sidebar">
+    <a href="../index.html" class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        <span>FoodSave</span>
+    </a>
+    
+    <ul class="sidebar-menu">
+        <li>
+            <button id="incomingBtn" class="active">
+                <i class="fa-solid fa-bell"></i>
+                Incoming Requests
+                <span class="menu-badge" id="incomingBadge">0</span>
+            </button>
+        </li>
+        <li>
+            <button id="acceptedBtn">
+                <i class="fa-solid fa-check-circle"></i>
+                Accepted
+            </button>
+        </li>
+        <li>
+            <button id="assignedBtn">
+                <i class="fa-solid fa-user-check"></i>
+                Assigned
+            </button>
+        </li>
+        <li>
+            <button id="completedBtn">
+                <i class="fa-solid fa-check-double"></i>
+                Completed
+            </button>
+        </li>
+    </ul>
+    
+    <button class="logout-btn" onclick="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </button>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+    
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <h1>NGO Dashboard</h1>
+            <p>Manage food requests and coordinate deliveries</p>
+        </div>
+        <div class="topbar-right">
+            <div class="stats-mini">
+                <div class="stat-item">
+                    <span class="stat-value" id="todayCount">0</span>
+                    <span class="stat-label">Today</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="weekCount">0</span>
+                    <span class="stat-label">This Week</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notifications -->
+    <div id="notificationArea"></div>
+    
+    <!-- INCOMING REQUESTS -->
+    <section id="incomingSection" class="content-section">
+        <div class="section-header">
+            <h2>Incoming Food Requests</h2>
+            <span class="section-count" id="incomingCount">0 pending</span>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Location</th>
+                    <th>Age</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="incomingTable">
+                <tr class="loading-row">
+                    <td colspan="6"><div class="loading">Loading...</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- ACCEPTED REQUESTS -->
+    <section id="acceptedSection" class="content-section" style="display: none;">
+        <div class="section-header">
+            <h2>Accepted Requests</h2>
+            <span class="section-count" id="acceptedCount">0</span>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="acceptedTable">
+                <tr class="loading-row">
+                    <td colspan="6"><div class="loading">Loading...</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- ASSIGNED DELIVERIES -->
+    <section id="assignedSection" class="content-section" style="display: none;">
+        <div class="section-header">
+            <h2>Assigned Volunteers</h2>
+            <span class="section-count" id="assignedCount">0</span>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Pickup From</th>
+                    <th>Volunteer</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="assignedTable">
+                <tr class="loading-row">
+                    <td colspan="6"><div class="loading">Loading...</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- COMPLETED DELIVERIES -->
+    <section id="completedSection" class="content-section" style="display: none;">
+        <div class="section-header">
+            <h2>Completed Deliveries</h2>
+            <span class="section-count" id="completedCount">0</span>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Location</th>
+                    <th>Volunteer</th>
+                    <th>Delivered</th>
+                </tr>
+            </thead>
+            <tbody id="completedTable">
+                <tr class="loading-row">
+                    <td colspan="5"><div class="loading">Loading...</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- Modal for Volunteer Assignment -->
+    <div id="assignModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Assign Volunteer</h3>
+                <button class="modal-close" onclick="closeAssignModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Select a volunteer for this food request:</p>
+                <div id="volunteerList" class="volunteer-list">
+                    <!-- Volunteers loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal" style="display: none;">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>Confirm Action</h3>
+                <button class="modal-close" onclick="closeConfirmModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">Are you sure?</p>
+                <div class="modal-actions">
+                    <button class="btn btn-gray" onclick="closeConfirmModal()">Cancel</button>
+                    <button class="btn btn-danger" id="confirmAction">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="trackModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Delivery Tracking</h3>
+            <button onclick="closeTrackModal()">✖</button>
+        </div>
+
+        <div class="modal-body">
+            <div id="trackContent">
+                Loading...
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<!-- Socket.io -->
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+<!-- NGO JS -->
+<script src="../js/ngo.js"></script>
+
+</body>
+</html>
