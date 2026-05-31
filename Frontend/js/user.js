@@ -1,8 +1,5 @@
 const socket = io("http://localhost:5000");
 
-/* =========================
-   ELEMENTS
-========================= */
 
 const availableTable = document.getElementById("availableTable");
 const myClaimsTable = document.getElementById("myClaimsTable");
@@ -119,7 +116,6 @@ function claimFood(id) {
             return;
         }
 
-        // 🔥 IMPORTANT: refresh both tables
         loadAvailableFood();
         loadMyClaims();
 

@@ -16,10 +16,6 @@ body{
   line-height:1.7;
 }
 
-/* =========================
-ROOT COLORS
-========================= */
-
 :root{
   --primary:#22c55e;
   --primary-dark:#16a34a;

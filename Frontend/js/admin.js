@@ -1,19 +1,10 @@
-// 
 // API BASE URL
-// ===============================
-
 const API_URL = 'http://localhost:5000/api';
 const API = 'http://localhost:5000/api/admin';
 
-
 const sections = document.querySelectorAll('main section');
-/*
-=====================================
-FETCH USERS
-=====================================
-*/
+/* FETCH USERS */
 async function fetchUsers() {
-
     try {
 
         const res = await fetch(`${API}/users`);
@@ -876,20 +867,11 @@ function filterUsers() {
 
 }
 
-/*
-=====================================
-BLOCK / ACTIVATE USER
-=====================================
-*/
-// ===============================
-// TOGGLE USER STATUS
-// ===============================
+// BLOCK / ACTIVATE USER
 
-/*
-=====================================
-TOGGLE USER STATUS
-=====================================
-*/
+// TOGGLE USER STATUS
+
+
 
 async function toggleUserStatus(id, currentStatus){
 

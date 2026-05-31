@@ -1,8 +1,6 @@
 const socket = io("http://localhost:5000");
 
-/* =========================
-   SECTIONS
-========================= */
+//  SECTIONS
 
 const sections = {
     dashboard: document.getElementById("dashboardSection"),
@@ -12,9 +10,7 @@ const sections = {
     completed: document.getElementById("completedSection"),
 };
 
-/* =========================
-   BUTTONS
-========================= */
+//  BUTTONS
 
 const buttons = {
     dashboard: document.getElementById("dashboardBtn"),
@@ -24,9 +20,7 @@ const buttons = {
     completed: document.getElementById("completedBtn"),
 };
 
-/* =========================
-   UI HELPERS
-========================= */
+// UI HELPERS
 
 function hideAll() {
     Object.values(sections).forEach(sec => {
@@ -42,9 +36,7 @@ function setActive(key) {
     if (buttons[key]) buttons[key].classList.add("active");
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+//    NAVIGATION
 
 buttons.dashboard?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -86,22 +78,11 @@ buttons.completed?.addEventListener("click", (e) => {
     loadWaste();
 });
 
-/* =========================
-   DEFAULT VIEW
-========================= */
-
+//  DEFAULT VIEW
 hideAll();
 sections.dashboard.style.display = "block";
 setActive("dashboard");
-
-/* =========================
-   SOCKET UPDATE
-========================= */
-
-/* =========================
-   SOCKET EVENTS
-========================= */
-
+// Socket Update 
 socket.on("farm-update", () => {
     setTimeout(loadWaste, 300);
 });

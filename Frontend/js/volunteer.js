@@ -1,8 +1,6 @@
 const socket = io("http://localhost:5000");
 
-/* =========================
-   SECTIONS
-========================= */
+//    SECTIONS
 
 const sections = {
     dashboard: document.getElementById("dashboardSection"),
@@ -11,9 +9,7 @@ const sections = {
     completed: document.getElementById("completedSection")
 };
 
-/* =========================
-   BUTTONS
-========================= */
+//  BUTTONS 
 
 const buttons = {
     dashboard: document.getElementById("dashboardBtn"),
@@ -22,9 +18,8 @@ const buttons = {
     completed: document.getElementById("completedBtn")
 };
 
-/* =========================
-   NAVIGATION HELPERS
-========================= */
+
+//    NAVIGATION HELPERS
 
 function hideAllSections() {
 
@@ -66,9 +61,8 @@ function activateSection(sectionKey, buttonKey) {
 
 }
 
-/* =========================
-   BUTTON EVENTS
-========================= */
+
+//    BUTTON EVENTS
 
 buttons.dashboard?.addEventListener("click", () => {
 
@@ -94,15 +88,12 @@ buttons.completed?.addEventListener("click", () => {
 
 });
 
-/* =========================
-   DEFAULT SECTION
-========================= */
+
+//    DEFAULT SECTION
 
 activateSection("dashboard", "dashboard");
 
-/* =========================
-   NOTIFICATIONS
-========================= */
+//    NOTIFICATIONS
 
 function showNotification(message) {
 
@@ -126,9 +117,8 @@ function showNotification(message) {
 
 }
 
-/* =========================
-   EMPTY TABLE HANDLER
-========================= */
+
+//    EMPTY TABLE HANDLER
 
 function showEmpty(table, message) {
 
@@ -149,9 +139,7 @@ function showEmpty(table, message) {
 
 }
 
-/* =========================
-   STATUS COLORS
-========================= */
+//   STATUS COLORS
 
 function getStatusColor(status) {
 
@@ -176,9 +164,7 @@ function getStatusColor(status) {
 
 }
 
-/* =========================
-   LOAD VOLUNTEER DATA
-========================= */
+// LOAD VOLUNTEER DATA
 
 async function loadVolunteerData() {
 
@@ -421,11 +407,7 @@ if (
     }
 
 }
-
-/* =========================
-   START PICKUP
-========================= */
-
+// START PICKUP
 function startPickup(id) {
 
     fetch(

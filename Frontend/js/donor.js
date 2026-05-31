@@ -60,7 +60,7 @@ LOAD DONATIONS (API)
 async function loadDonations() {
     try {
 
-        // 🟡 LOADING STATE (NEW)
+        // LOADING STATE (NEW)
         if (donorTable) {
             donorTable.innerHTML = `
                 <tr><td colspan="7">Loading donations...</td></tr>
@@ -75,7 +75,7 @@ async function loadDonations() {
 
         if (!data.success) return;
 
-        // 🟡 EMPTY STATE (NEW)
+        // EMPTY STATE (NEW)
         if (data.donations.length === 0) {
             if (donorTable) {
                 donorTable.innerHTML = `

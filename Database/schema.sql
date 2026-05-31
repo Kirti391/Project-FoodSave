@@ -229,9 +229,8 @@ CREATE TABLE IF NOT EXISTS volunteers (
 
 );
 
--- =====================================================
 -- ADMIN TABLE
--- =====================================================
+
 
 CREATE TABLE IF NOT EXISTS admins (
 

@@ -1,8 +1,5 @@
 const socket = io("http://localhost:5000");
 
-/* =========================
-   SIDEBAR FUNCTIONALITY (FIXED)
-========================= */
 
 const sections = {
     incoming: document.getElementById("incomingSection"),
@@ -37,7 +34,6 @@ function switchSection(sectionKey) {
     }
 }
 
-/* attach sidebar events safely */
 Object.keys(buttons).forEach(key => {
     if (buttons[key]) {
         buttons[key].addEventListener("click", () => switchSection(key));
