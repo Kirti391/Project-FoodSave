@@ -260,9 +260,7 @@ TRUST STRIP
   margin-right:10px;
 }
 
-/* =========================
-SECTION TITLE
-========================= */
+/* SECTION TITLE */
 
 .section-title{
   text-align:center;
@@ -288,9 +286,7 @@ SECTION TITLE
   margin:auto;
 }
 
-/* =========================
-STATS
-========================= */
+/*  STATS */
 
 .stats{
   padding:120px 8%;
@@ -680,9 +676,7 @@ footer{
   color:#9ca3af;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1100px){
 
