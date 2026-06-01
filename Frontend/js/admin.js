@@ -783,11 +783,7 @@ ${(user.status || 'active') === 'blocked'
 
 }
 
-/*
-=====================================
-UPDATE STATS
-=====================================
-*/
+/* UPDATE STATS */
 
 function updateUserStats(users) {
 
@@ -803,11 +799,7 @@ function updateUserStats(users) {
 
 }
 
-/*
-=====================================
-SEARCH USERS
-=====================================
-*/
+/* SEARCH USERS */
 
 userSearch.addEventListener('input', () => {
 
