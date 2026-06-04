@@ -142,9 +142,7 @@ CREATE TABLE IF NOT EXISTS ngos (
 
 );
 
--- =====================================================
 -- FARM TABLE
--- =====================================================
 
 CREATE TABLE IF NOT EXISTS farms (
 
@@ -246,10 +244,7 @@ CREATE TABLE IF NOT EXISTS admins (
 
 );
 
--- =====================================================
 -- SAMPLE ADMIN
--- PASSWORD SHOULD BE HASHED IN REAL PROJECT
--- =====================================================
 
 INSERT INTO admins (
 
