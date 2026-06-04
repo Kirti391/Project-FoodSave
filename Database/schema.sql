@@ -112,9 +112,7 @@ CREATE TABLE IF NOT EXISTS notifications (
 
 );
 
--- =====================================================
 -- NGO TABLE
--- =====================================================
 
 CREATE TABLE IF NOT EXISTS ngos (
 
@@ -166,9 +164,7 @@ CREATE TABLE IF NOT EXISTS farms (
 
 );
 
--- =====================================================
 -- PICKUP REQUESTS TABLE
--- =====================================================
 
 CREATE TABLE IF NOT EXISTS pickup_requests (
 
