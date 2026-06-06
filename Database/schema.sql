@@ -36,25 +36,15 @@ CREATE TABLE IF NOT EXISTS users1(
 );
 
 -- FOOD SUBMISSIONS TABLE
-
 CREATE TABLE IF NOT EXISTS food_submissions (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     user_id INT,
-
     food_type VARCHAR(255) NOT NULL,
-
     quantity VARCHAR(100) NOT NULL,
-
     hours_old INT NOT NULL,
-
     food_condition VARCHAR(100),
-
     location TEXT,
-
     food_category VARCHAR(100),
-
     storage_condition VARCHAR(255),
 
     pickup_availability VARCHAR(255),
