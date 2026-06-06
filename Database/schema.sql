@@ -46,11 +46,8 @@ CREATE TABLE IF NOT EXISTS food_submissions (
     location TEXT,
     food_category VARCHAR(100),
     storage_condition VARCHAR(255),
-
     pickup_availability VARCHAR(255),
-
     classification VARCHAR(50),
-
     action_required VARCHAR(255),
 
     status ENUM(
