@@ -77,13 +77,10 @@ CREATE TABLE IF NOT EXISTS notifications (
     recipient_type VARCHAR(100),
     message TEXT,
     sent_status BOOLEAN DEFAULT FALSE,
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (submission_id)
     REFERENCES food_submissions(id)
     ON DELETE CASCADE
-
 );
 
 -- NGO TABLE
