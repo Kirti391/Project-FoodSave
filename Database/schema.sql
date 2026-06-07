@@ -49,7 +49,6 @@ CREATE TABLE IF NOT EXISTS food_submissions (
     pickup_availability VARCHAR(255),
     classification VARCHAR(50),
     action_required VARCHAR(255),
-
     status ENUM(
         'pending',
         'accepted',
@@ -58,17 +57,11 @@ CREATE TABLE IF NOT EXISTS food_submissions (
     ) DEFAULT 'pending',
 
     ngo_assigned VARCHAR(255),
-
     donor_name VARCHAR(255),
-
     donor_phone VARCHAR(20),
-
     latitude DECIMAL(10,8),
-
     longitude DECIMAL(11,8),
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (user_id)
     REFERENCES users(id)
     ON DELETE SET NULL
@@ -78,17 +71,11 @@ CREATE TABLE IF NOT EXISTS food_submissions (
 -- NOTIFICATIONS TABLE
 
 CREATE TABLE IF NOT EXISTS notifications (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     submission_id INT,
-
     recipient_email VARCHAR(255),
-
     recipient_type VARCHAR(100),
-
     message TEXT,
-
     sent_status BOOLEAN DEFAULT FALSE,
 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
