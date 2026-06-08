@@ -73,29 +73,17 @@ CREATE TABLE IF NOT EXISTS notifications (
 -- NGO TABLE
 
 CREATE TABLE IF NOT EXISTS ngos (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     ngo_name VARCHAR(255) NOT NULL,
-
     email VARCHAR(255) UNIQUE,
-
     phone VARCHAR(20),
-
     address TEXT,
-
     city VARCHAR(100),
-
     state VARCHAR(100),
-
     pincode VARCHAR(20),
-
     food_capacity VARCHAR(100),
-
     availability_status BOOLEAN DEFAULT TRUE,
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
 );
 
 -- FARM TABLE
