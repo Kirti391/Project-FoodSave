@@ -114,13 +114,9 @@ CREATE TABLE IF NOT EXISTS ngos (
 -- FARM TABLE
 
 CREATE TABLE IF NOT EXISTS farms (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     farm_name VARCHAR(255),
-
     owner_name VARCHAR(255),
-
     email VARCHAR(255),
 
     phone VARCHAR(20),
