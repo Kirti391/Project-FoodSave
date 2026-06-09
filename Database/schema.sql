@@ -169,15 +169,10 @@ CREATE TABLE IF NOT EXISTS volunteers (
 
 
 CREATE TABLE IF NOT EXISTS admins (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     name VARCHAR(255),
-
     email VARCHAR(255) UNIQUE,
-
     password VARCHAR(255),
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
@@ -185,19 +180,14 @@ CREATE TABLE IF NOT EXISTS admins (
 -- SAMPLE ADMIN
 
 INSERT INTO admins (
-
     name,
     email,
     password
-
 )
-
 VALUES (
-
     'Super Admin',
     'admin@foodsave.com',
     'admin123'
-
 );
 
 -- SHOW ALL TABLES
