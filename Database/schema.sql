@@ -205,10 +205,8 @@ VALUES (
 SHOW TABLES;
 ALTER TABLE food_submissions
 ADD ngo_assigned VARCHAR(255);
-
 ALTER TABLE food_submissions
 ADD volunteer_assigned VARCHAR(255);
-
 ALTER TABLE food_submissions
 ADD pickup_status VARCHAR(100)
 DEFAULT 'Pending';
