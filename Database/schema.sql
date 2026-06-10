@@ -130,44 +130,29 @@ CREATE TABLE IF NOT EXISTS pickup_requests (
     volunteer_phone VARCHAR(20),
 
     notes TEXT,
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (submission_id)
     REFERENCES food_submissions(id)
     ON DELETE CASCADE,
-
     FOREIGN KEY (ngo_id)
     REFERENCES ngos(id)
     ON DELETE CASCADE
 
 );
 
--- =====================================================
 -- VOLUNTEERS TABLE
--- =====================================================
-
 CREATE TABLE IF NOT EXISTS volunteers (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     name VARCHAR(255),
-
     email VARCHAR(255),
-
     phone VARCHAR(20),
-
     city VARCHAR(100),
-
     availability_status BOOLEAN DEFAULT TRUE,
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
 
 -- ADMIN TABLE
-
-
 CREATE TABLE IF NOT EXISTS admins (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255),
