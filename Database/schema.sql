@@ -109,26 +109,18 @@ CREATE TABLE IF NOT EXISTS farms (
 -- PICKUP REQUESTS TABLE
 
 CREATE TABLE IF NOT EXISTS pickup_requests (
-
     id INT PRIMARY KEY AUTO_INCREMENT,
-
     submission_id INT,
-
     ngo_id INT,
-
     pickup_status ENUM(
         'pending',
         'assigned',
         'picked',
         'delivered'
     ) DEFAULT 'pending',
-
     pickup_time DATETIME,
-
     volunteer_name VARCHAR(255),
-
     volunteer_phone VARCHAR(20),
-
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (submission_id)
