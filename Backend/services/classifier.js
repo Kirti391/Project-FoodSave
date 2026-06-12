@@ -5,11 +5,8 @@ function classifyFood(data) {
     const hours = parseInt(data.hours_old);
 
     // RAW FOOD DATASET
-
     const rawFoods = [
-
         // VEGETABLES
-
         'vegetables',
         'tomato',
         'potato',
@@ -213,25 +210,17 @@ function classifyFood(data) {
         )
 
     ) {
-
         return {
-
             classification: 'animal',
             action: 'feed farm'
-
         };
-
     }
-
     // WASTE / COMPOST
     
     return {
-
         classification: 'waste',
         action: 'compost'
-
     };
-
 }
 
 module.exports = classifyFood;
