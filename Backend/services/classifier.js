@@ -1,11 +1,7 @@
 function classifyFood(data) {
-
     const food = data.food_type.toLowerCase().trim();
-
     const condition = data.food_condition.toLowerCase().trim();
-
     const category = data.food_category.toLowerCase().trim();
-
     const hours = parseInt(data.hours_old);
 
     // RAW FOOD DATASET
