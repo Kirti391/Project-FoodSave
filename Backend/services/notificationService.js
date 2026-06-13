@@ -16,17 +16,11 @@ async function sendEmail(to, subject, text) {
             to,
             subject,
             text
-
         });
 
         console.log('Email Sent');
-
     } catch (error) {
-
         console.log(error);
-
     }
-
 }
-
 module.exports = sendEmail;
