@@ -4,9 +4,7 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: 'jainwarkirti8@gmail.com',
         pass: 'gpaq fwff ztuu yfpq'
-
     }
-
 });
 
 async function sendEmail(to, subject, text) {
@@ -17,7 +15,6 @@ async function sendEmail(to, subject, text) {
             subject,
             text
         });
-
         console.log('Email Sent');
     } catch (error) {
         console.log(error);
