@@ -93,15 +93,10 @@ CREATE TABLE IF NOT EXISTS farms (
     farm_name VARCHAR(255),
     owner_name VARCHAR(255),
     email VARCHAR(255),
-
     phone VARCHAR(20),
-
     address TEXT,
-
     city VARCHAR(100),
-
     accepted_food_types TEXT,
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
