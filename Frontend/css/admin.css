@@ -793,9 +793,8 @@ select{
     transform:translateY(-2px);
 
 }
-/* =========================
-TOAST
-========================= */
+
+/* TOAST */
 
 .toast{
     position:fixed;
@@ -824,6 +823,7 @@ TOAST
 .toast.error{
     border-color:#ef4444;
 }
+
 /* USER ACTION BTNS */
 
 .block-btn{
@@ -857,9 +857,7 @@ TOAST
     background:#16a34a;
     transform:translateY(-2px);
 }
-/* =========================
-USER STATUS
-========================= */
+/* USER STATUS */
 
 .user-status{
 
