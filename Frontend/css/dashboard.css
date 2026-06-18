@@ -29,18 +29,14 @@ body{
   min-height:100vh;
 }
 
-/* =========================
-LAYOUT
-========================= */
+/* LAYOUT */
 
 .dashboard{
   display:flex;
   min-height:100vh;
 }
 
-/* =========================
-SIDEBAR
-========================= */
+/* SIDEBAR */
 
 .sidebar{
   width:280px;
@@ -48,12 +44,9 @@ SIDEBAR
   position:fixed;
   left:0;
   top:0;
-
   background:rgba(255,255,255,0.75);
   backdrop-filter:blur(18px);
-
   border-right:1px solid rgba(255,255,255,0.4);
-
   padding:35px 22px;
   z-index:1000;
 }
