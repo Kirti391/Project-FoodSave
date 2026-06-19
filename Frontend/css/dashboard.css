@@ -328,9 +328,7 @@ tbody td{
   font-weight:500;
 }
 
-/* =========================
-FORMS
-========================= */
+/* FORMS */
 
 .form-grid{
   display:grid;
@@ -341,15 +339,10 @@ FORMS
 .form-grid input,
 .form-grid select{
   padding:16px;
-
   border-radius:18px;
-
   border:1px solid #e5e7eb;
-
   background:white;
-
   outline:none;
-
   transition:0.3s;
 }
 
