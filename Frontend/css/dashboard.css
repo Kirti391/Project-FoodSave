@@ -428,9 +428,7 @@ tbody td{
   background:#2563eb;
 }
 
-/* =========================
-EMPTY STATE
-========================= */
+/* EMPTY STATE */
 
 .empty-state{
   text-align:center;
@@ -447,9 +445,7 @@ EMPTY STATE
   color:var(--gray);
 }
 
-/* =========================
-ANIMATIONS
-========================= */
+/* ANIMATIONS */
 
 .card,
 .table-container,
