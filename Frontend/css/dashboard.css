@@ -467,17 +467,13 @@ tbody td{
 
 }
 
-/* =========================
-MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 .mobile-menu{
   display:none;
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
 
@@ -555,9 +551,7 @@ RESPONSIVE
   }
 
 }
-/* =========================================
-PREMIUM DASHBOARD UI
-========================================= */
+/* PREMIUM DASHBOARD UI */
 
 .dashboard-hero{
   background:linear-gradient(135deg,#22c55e,#16a34a);
