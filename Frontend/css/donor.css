@@ -29,8 +29,6 @@
     --radius-lg: 24px;
     --transition: all 0.3s ease;
 }
-
-/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
@@ -673,10 +671,10 @@ img {
 }
 
 .submit-btn i {
-    font-size:18px;}
-    /* =====================================================
-   MY DONATIONS & COMPLETED SECTIONS
-   ===================================================== */
+    font-size:18px;
+}
+    
+/* MY DONATIONS & COMPLETED SECTIONS */
 
 /* TABLE CONTAINER */
 .table-container {
