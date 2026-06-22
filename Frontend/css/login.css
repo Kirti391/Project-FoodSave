@@ -24,9 +24,7 @@ body{
     --radius:28px;
 }
 
-/* =========================
-LAYOUT
-========================= */
+/* LAYOUT */
 
 .login-page{
     width:100%;
@@ -35,9 +33,7 @@ LAYOUT
     grid-template-columns:1fr 1fr;
 }
 
-/* =========================
-LEFT SIDE
-========================= */
+/* LEFT SIDE */
 
 .login-left{
     position:relative;
