@@ -42,7 +42,6 @@ body{
     justify-content:center;
     padding:80px;
     overflow:hidden;
-
     background:
     radial-gradient(circle at top left,#dcfce7,transparent 35%),
     radial-gradient(circle at bottom right,#ffedd5,transparent 35%),
@@ -160,9 +159,7 @@ body{
     font-size:14px;
 }
 
-/* =========================
-RIGHT SIDE
-========================= */
+/* RIGHT SIDE */
 
 .login-right{
     display:flex;
@@ -207,9 +204,7 @@ RIGHT SIDE
     font-size:15px;
 }
 
-/* =========================
-FORM
-========================= */
+/* FORM  */
 
 .input-group{
     margin-bottom:24px;
