@@ -291,9 +291,7 @@ body{
     font-weight:700;
 }
 
-/* =========================
-ANIMATION
-========================= */
+/* ANIMATION */
 
 @keyframes fadeUp{
 
@@ -309,9 +307,7 @@ ANIMATION
 
 }
 
-/* =========================
-RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
 
