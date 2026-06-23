@@ -71,9 +71,8 @@ img {
     height: auto;
 }
 
-/* =====================================================
-     SIDEBAR
-===================================================== */
+/* SIDEBAR */
+
 .sidebar {
     width: 280px;
     background: var(--white);
@@ -178,9 +177,7 @@ img {
     width: 24px;
 }
 
-/* =====================================================
-     MAIN CONTENT
-===================================================== */
+/* MAIN CONTENT */
 .main-content {
     margin-left: 280px;
     padding: 24px 32px;
@@ -233,9 +230,7 @@ img {
     color: var(--gray);
 }
 
-/* =====================================================
-     CONTENT SECTION
-===================================================== */
+/* CONTENT SECTION */
 .content-section {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -269,9 +264,8 @@ img {
     color: var(--gray);
 }
 
-/* =====================================================
-     DATA TABLE
-===================================================== */
+/* DATA TABLE */
+
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -313,9 +307,7 @@ img {
     color: var(--gray);
 }
 
-/* =====================================================
-     CELL STYLES
-===================================================== */
+/* CELL STYLES  */
 .cell-with-icon {
     display: flex;
     align-items: center;
