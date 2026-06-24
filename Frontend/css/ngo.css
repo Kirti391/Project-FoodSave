@@ -308,6 +308,7 @@ img {
 }
 
 /* CELL STYLES  */
+
 .cell-with-icon {
     display: flex;
     align-items: center;
@@ -344,9 +345,8 @@ img {
     color: var(--gray);
 }
 
-/* =====================================================
-     BADGES
-===================================================== */
+/* BADGES */
+
 .urgency-badge {
     display: inline-block;
     padding: 4px 10px;
@@ -400,9 +400,8 @@ img {
     color: var(--gray);
 }
 
-/* =====================================================
-     ACTION BUTTONS
-===================================================== */
+/* ACTION BUTTONS */
+
 .action-btns {
     display: flex;
     gap: 10px;
