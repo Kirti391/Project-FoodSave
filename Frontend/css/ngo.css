@@ -467,9 +467,8 @@ img {
     color: var(--white);
 }
 
-/* =====================================================
-     EMPTY STATE
-===================================================== */
+ /* EMPTY STATE */
+ 
 .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -487,9 +486,8 @@ img {
     font-weight: 500;
 }
 
-/* =====================================================
-     NOTIFICATIONS
-===================================================== */
+/* NOTIFICATIONS */
+
 #notificationArea {
     position: fixed;
     top: 24px;
