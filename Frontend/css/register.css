@@ -19,9 +19,7 @@ body{
   color:#1f2937;
 }
 
-/* =========================
-ROOT COLORS
-========================= */
+/* ROOT COLORS */
 
 :root{
   --primary:#22c55e;
@@ -35,9 +33,7 @@ ROOT COLORS
   --radius:30px;
 }
 
-/* =========================
-REGISTER CONTAINER
-========================= */
+/* REGISTER CONTAINER */
 
 .register-container{
   width:100%;
@@ -45,9 +41,7 @@ REGISTER CONTAINER
   position:relative;
 }
 
-/* =========================
-REGISTER CARD
-========================= */
+/* REGISTER CARD */
 
 .register-card{
   background:rgba(255,255,255,0.92);
@@ -83,9 +77,7 @@ REGISTER CARD
   left:-80px;
 }
 
-/* =========================
-LOGO
-========================= */
+/* LOGO */
 
 .logo{
   font-size:38px;
