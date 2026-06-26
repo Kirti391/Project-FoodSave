@@ -89,10 +89,8 @@ body{
   z-index:2;
 }
 
-/* =========================
-SUBTITLE
-========================= */
-
+/* SUBTITLE*/
+  
 .register-subtitle{
   text-align:center;
   color:var(--gray);
@@ -102,9 +100,7 @@ SUBTITLE
   z-index:2;
 }
 
-/* =========================
-FORM
-========================= */
+/* FORM */
 
 form{
   position:relative;
