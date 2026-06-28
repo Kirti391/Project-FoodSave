@@ -28,9 +28,7 @@ body{
   --radius:24px;
 }
 
-/* =========================
-NAVBAR
-========================= */
+/* NAVBAR  */
 
 .navbar{
   width:100%;
@@ -98,9 +96,7 @@ NAVBAR
   transform:translateY(-3px);
 }
 
-/* =========================
-HERO
-========================= */
+/* HERO  */
 
 .hero{
   min-height:100vh;
