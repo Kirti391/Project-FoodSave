@@ -230,9 +230,7 @@ body{
 
 }
 
-/* =========================
-TRUST STRIP
-========================= */
+/* TRUST-STRIP  */
 
 .trust-strip{
   padding:30px 8%;
@@ -334,9 +332,7 @@ TRUST STRIP
   margin-top:10px;
 }
 
-/* =========================
-STEPS
-========================= */
+/* STEPS  */
 
 .steps-section{
   padding:120px 8%;
@@ -380,9 +376,7 @@ STEPS
   margin-bottom:15px;
 }
 
-/* =========================
-DONATION SECTION
-========================= */
+/* DONATION SECTION  */
 
 .donation-section{
   padding:120px 8%;
