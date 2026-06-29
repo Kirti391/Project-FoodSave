@@ -526,9 +526,7 @@ body{
   color:var(--gray);
 }
 
-/* =========================
-NGO
-========================= */
+/* NGO  */
 
 .ngo-card{
   text-align:center;
@@ -564,10 +562,7 @@ TESTIMONIALS
   color:var(--primary-dark);
 }
 
-/* =========================
-CTA
-========================= */
-
+/* CTA  */
 .cta{
   padding:100px 8%;
 }
